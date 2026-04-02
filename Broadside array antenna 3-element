@@ -1,0 +1,22 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Angle values
+theta = np.linspace(0, 2*np.pi, 360)
+
+# Array factor for 3-element broadside array (d = lambda/2)
+AF = 1 + 2 * np.cos(np.pi * np.cos(theta))
+
+# Normalize
+AF = np.abs(AF)
+AF = AF / np.max(AF)
+
+# Plot in polar form
+plt.figure()
+ax = plt.subplot(111, polar=True)
+
+ax.plot(theta, AF)
+
+ax.set_title("2D Radiation Pattern of 3-Element Broadside Array")
+
+plt.show()

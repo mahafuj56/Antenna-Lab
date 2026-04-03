@@ -15,3 +15,16 @@ ax = plt.figure().add_subplot(projection='3d')
 ax.plot_surface(X, Y, Z, cmap="plasma")
 ax.set_title("Patch Antenna (3D)")
 plt.show()
+
+
+#2D pattern 
+import numpy as np
+import matplotlib.pyplot as plt
+
+theta = np.linspace(0, 2*np.pi, 400)
+R = np.ones_like(theta)
+
+ax = plt.subplot(111, projection="polar")
+ax.plot(theta, R)
+ax.set_title("Isotropic Antenna (2D)")
+plt.show()
